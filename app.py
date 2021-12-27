@@ -55,13 +55,12 @@ def main():
         lower = math.floor(cumulative12)
         upper = lower + 1
 
-        slope = (point4_conversion[upper] - point4_conversion[lower]) / (upper - lower)
-
-        cumulative4 = slope * cumulative12
+        print(upper, lower)
+        cumulative4 = (((point4_conversion[upper] - point4_conversion[lower]) / (upper - lower)) * (cumulative12 - lower)) + point4_conversion[lower]
     else:
         cumulative4 = point4_conversion[cumulative12]
 
-    cumulative4 = round(cumulative4, 1)
+    cumulative4 = round(cumulative4, 4)
 
     print("12 point cumulative GPA: " + str(cumulative12))
     print("4 point cumulative GPA: " + str(cumulative4))
